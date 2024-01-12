@@ -1,6 +1,6 @@
 ﻿namespace GamificationRewards.Calculators
 {
-    public class CalculatePoints : ICalculateReward, ICalculatePoints
+    public class CalculateRewardsPoints : ICalculateReward, ICalculateRewardsPoints
     {
         public bool Add(decimal reward)
         {

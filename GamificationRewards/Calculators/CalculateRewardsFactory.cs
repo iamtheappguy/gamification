@@ -8,10 +8,10 @@
             {
                 case CalculateRewardsFactoryBuildItem.CalculateXP:
                 {
-                    return new CalculateXP();
+                    return new CalculateRewardsXP();
                 }
                 case CalculateRewardsFactoryBuildItem.CalculatePoints:
-                    return new CalculatePoints();
+                    return new CalculateRewardsPoints();
                 default:
                     throw new NotImplementedException("unknown CalculateRewardsFactoryBuildItem");
             }

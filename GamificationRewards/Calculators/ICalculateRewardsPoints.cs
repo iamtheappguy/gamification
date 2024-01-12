@@ -1,6 +1,6 @@
 ﻿namespace GamificationRewards.Calculators;
 
-public interface ICalculatePoints
+public interface ICalculateRewardsPoints
 {
     bool Add(decimal reward);
     bool Remove();

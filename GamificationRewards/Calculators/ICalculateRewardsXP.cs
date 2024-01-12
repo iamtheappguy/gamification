@@ -1,6 +1,6 @@
 ﻿namespace GamificationRewards.Calculators;
 
-public interface ICalculateXP
+public interface ICalculateRewardsXP
 {
     bool Add(decimal reward);
     bool Remove();

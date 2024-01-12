@@ -9,7 +9,7 @@ using Xunit;
              [Fact]
              public void CalculateRewardTests_Add_ReturnTrue()
              {
-                 var primeService = new CalculatePoints();
+                 var primeService = new CalculateRewardsPoints();
                  bool result = primeService.Add(1);
 
                  Assert.True(result, "1 should not be prime");

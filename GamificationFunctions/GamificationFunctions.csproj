@@ -17,6 +17,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GamificationRewards\GamificationRewards.csproj" />
+    <ProjectReference Include="..\Gamification\Gamification.csproj" />
+    <ProjectReference Include="..\Repositories.Interfaces\Gamification.Repositories.Interfaces.csproj" />
+    <ProjectReference Include="..\Repositories\Gamification.Repositories.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">

@@ -12,7 +12,7 @@ using Xunit;
                  ICalculateRewardsFactory calculateRewardsFactory = new CalculateRewardsFactory();
                  ICalculateReward result = calculateRewardsFactory.Build(CalculateRewardsFactoryBuildItem.CalculateXP);
 
-                 Assert.IsType<CalculateXP>(result);
+                 Assert.IsType<CalculateRewardsXP>(result);
              }
 
             [Fact]
@@ -21,7 +21,7 @@ using Xunit;
                 ICalculateRewardsFactory calculateRewardsFactory = new CalculateRewardsFactory();
                 ICalculateReward result = calculateRewardsFactory.Build(CalculateRewardsFactoryBuildItem.CalculatePoints);
 
-                Assert.IsType<CalculatePoints>(result);
+                Assert.IsType<CalculateRewardsPoints>(result);
             }
         }
     }
