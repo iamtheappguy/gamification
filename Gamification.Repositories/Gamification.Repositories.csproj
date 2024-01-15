@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Gamification.Core\Gamification.Core.csproj" />
-    <ProjectReference Include="..\Gamification.Interfaces\Gamification.Interfaces.csproj" />
     <ProjectReference Include="..\Gamification.Repositories.Contracts\Gamification.Repositories.Contracts.csproj" />
-    <ProjectReference Include="..\GamificationRewards\GamificationRewards.csproj" />
   </ItemGroup>
 
 </Project>

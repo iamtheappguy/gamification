@@ -1,6 +1,7 @@
 using System.Net;
 using Gamification.Core;
-using Gamification.UseCases.GetPointsRewardsUseCases;
+using Gamification.UseCases.GetPointsRewardsUseCase;
+using Gamification.UseCases.GetSeasonPassUseCase;
 using Gamification.UseCases.GetXPRewardsUseCases;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -11,10 +12,10 @@ namespace GamificationFunctions
     public class GamificationGetRewards
     {
         private readonly IGetPointsRewardUseCase _getPointsRewardUseCase;
-        private readonly IGetXpRewardUseCase _getXpRewardUseCase;
+        private readonly IGetPassRewardUseCase _getXpRewardUseCase;
         private readonly ILogger _logger;
 
-        public GamificationGetRewards(ILoggerFactory loggerFactory, IGetPointsRewardUseCase getPointsRewardUseCase, IGetXpRewardUseCase getXpRewardUseCase)
+        public GamificationGetRewards(ILoggerFactory loggerFactory, IGetPointsRewardUseCase getPointsRewardUseCase, IGetPassRewardUseCase getXpRewardUseCase)
         {
             _logger = loggerFactory.CreateLogger<GamificationGetRewards>();
             _getPointsRewardUseCase = getPointsRewardUseCase;

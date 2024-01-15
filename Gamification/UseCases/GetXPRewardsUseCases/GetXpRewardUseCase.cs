@@ -1,15 +1,15 @@
 ﻿using Gamification.Interfaces.UseCases;
-using Gamification.Repositories.Interfaces;
+using Gamification.Repositories.Contracts.PassRepository;
 using GamificationRewards.Calculators;
 
 namespace Gamification.UseCases.GetXPRewardsUseCases
 {
     public class GetXpRewardUseCase : ICommand<GetXpRewardsUseCaseRequest, GetXpRewardsUseCaseResponse>, IGetXpRewardUseCase
     {
-        private readonly IUserRewardsRepository _userRewardsRepository;
+        private readonly IPassRepository _userRewardsRepository;
         private readonly ICalculateRewardsXP _calculateRewardPoints;
 
-        public GetXpRewardUseCase(IUserRewardsRepository userRewardsRepository, ICalculateRewardsXP calculateRewardsXp)
+        public GetXpRewardUseCase(IPassRepository userRewardsRepository, ICalculateRewardsXP calculateRewardsXp)
         {
             _userRewardsRepository = userRewardsRepository;
             _calculateRewardPoints = calculateRewardsXp;
