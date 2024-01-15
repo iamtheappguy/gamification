@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gamification.Core\Gamification.Core.csproj" />
+    <ProjectReference Include="..\Gamification.Interfaces\Gamification.Interfaces.csproj" />
+    <ProjectReference Include="..\Gamification.Repositories.Contracts\Gamification.Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\GamificationRewards\Gamification.Rewards.csproj" />
+  </ItemGroup>
+
+</Project>

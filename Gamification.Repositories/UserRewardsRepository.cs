@@ -1,17 +1,19 @@
-﻿using Gamification.Repositories.Contracts.UserRewards;
+﻿using Gamification.Repositories.Contracts.UserRewardsRepository;
+using Gamification.Repositories.Contracts.UserRewardsRepository.GetPoints;
+using Gamification.Repositories.Contracts.UserRewardsRepository.GetXP;
 
 namespace Gamification.Repositories
 {
     public class UserRewardsRepository : IUserRewardsRepository
     {
-        public int GetPointsById(string id)
+        public GetPointsUserRewardsRepositoryGetResponse GetPointsById(string userId)
         {
-            return 67943;
+            throw new NotImplementedException();
         }
 
-        public double GetXpById(string id)
+        public GetPointsUserXpRepositoryGetResponse GetXpById(string userId)
         {
-            return 432.65;
+            throw new NotImplementedException();
         }
     }
 }
