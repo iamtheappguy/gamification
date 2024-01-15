@@ -5,12 +5,10 @@ namespace Gamification.Usecases.GetXPRewardsUseCases;
 public class GetXpRewardsUseCaseRequestData : ICommandRequest
 {
     public string Id { get; private set; }
-    public string Name { get; private set; }
 
-    public GetXpRewardsUseCaseRequestData(string id, string name)
+    public GetXpRewardsUseCaseRequestData(string id)
     {
         Id = id;
-        Name = name;
     }
 
 }

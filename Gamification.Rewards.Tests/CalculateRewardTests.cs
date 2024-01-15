@@ -1,7 +1,7 @@
 using Gamification.Rewards.Calculators;
 using Xunit;
 
-     namespace GamificationRewardsTests
+namespace Gamification.Rewards.Tests
      { 
          public class CalculateRewardTests
          {

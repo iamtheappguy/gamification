@@ -1,6 +1,7 @@
 using System.Net;
 using Gamification.Usecases.GetPointsRewardsUseCase;
 using Gamification.Usecases.GetSeasonPassUseCase;
+using Gamification.Usecases.GetXPRewardsUseCases;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
@@ -25,8 +26,11 @@ namespace Gamification.Functions
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
-            var xpResult = _getPointsRewardUseCase.Call(new GetPointsRewardsUseCaseRequest("23432"));
-            
+            var userId = "23439";
+            var pointsResult = _getPointsRewardUseCase.Call(new GetPointsRewardsUseCaseRequest(userId));
+            var xpResult = _getXpRewardUseCase.Call(new GetXpRewardsUseCaseRequest(new GetXpRewardsUseCaseRequestData(userId)));
+
+            // use calculator
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
