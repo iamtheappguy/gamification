@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gamification.Rewards\Gamification.Rewards.csproj" />
-    <ProjectReference Include="..\GamificationRewards\Gamification.Rewards.csproj" />
   </ItemGroup>
 
 </Project>
