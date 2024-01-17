@@ -1,14 +1,14 @@
 ﻿using Gamification.UseCases.Contracts;
 
-namespace Gamification.Usecases.GetXPRewardsUseCases;
+namespace Gamification.Usecases.GetDropUseCase;
 
-public class GetXpRewardsUseCaseResponseData : CommandResponseData
+public class GetDropRewardUseCaseResponseData : CommandResponseData
 {
     public string Id { get; private set; }
     public string Name { get; private set; }
     public double Xp { get; private set; }
 
-    public GetXpRewardsUseCaseResponseData(string id, string name, double xp)
+    public GetDropRewardUseCaseResponseData(string id, string name, double xp)
     {
         Id = id;
         Name = name;

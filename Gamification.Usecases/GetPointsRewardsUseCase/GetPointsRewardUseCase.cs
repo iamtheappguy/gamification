@@ -1,6 +1,6 @@
-﻿using Gamification.Interfaces.UseCases;
-using Gamification.Repositories.Contracts.UserRewardsRepository;
+﻿using Gamification.Repositories.Contracts.UserRewardsRepository;
 using Gamification.Rewards.Calculators;
+using Gamification.UseCases.Contracts;
 
 namespace Gamification.Usecases.GetPointsRewardsUseCase
 {
@@ -18,8 +18,8 @@ namespace Gamification.Usecases.GetPointsRewardsUseCase
         public async Task<GetPointsRewardsUseCaseResponse> Call(GetPointsRewardsUseCaseRequest data)
         {
             var points = _userRewardsRepository.GetPointsById(data.UserId);
-
-            return await Task.FromResult(new GetPointsRewardsUseCaseResponse(true, new GetPointsRewardsUseCaseResponseData("432814", "Krzy Nobberto", 4763)));
+            
+            return await Task.FromResult(new GetPointsRewardsUseCaseResponse(true, new GetPointsRewardsUseCaseResponseData(points.Data.Id, points.Data.Name, points.Data.Points)));
         }
     }
 }

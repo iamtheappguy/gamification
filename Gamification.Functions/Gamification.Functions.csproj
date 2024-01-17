@@ -16,6 +16,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gamification.Functions.Contracts\Gamification.Functions.Contracts.csproj" />
     <ProjectReference Include="..\Gamification.Repositories\Gamification.Repositories.csproj" />
     <ProjectReference Include="..\Gamification.Rewards\Gamification.Rewards.csproj" />
     <ProjectReference Include="..\Gamification.Usecases\Gamification.Usecases.csproj" />

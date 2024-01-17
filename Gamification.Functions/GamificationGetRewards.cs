@@ -1,20 +1,27 @@
 using System.Net;
+using System.Net.Http.Json;
+using System.Text;
+using Azure;
+using Gamification.Functions.Contracts;
+using Gamification.Functions.Contracts.GamificationGetRewards;
+using Gamification.Usecases.GetPassUseCase;
 using Gamification.Usecases.GetPointsRewardsUseCase;
-using Gamification.Usecases.GetSeasonPassUseCase;
 using Gamification.Usecases.GetXPRewardsUseCases;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
 
 namespace Gamification.Functions
 {
     public class GamificationGetRewards
     {
         private readonly IGetPointsRewardUseCase _getPointsRewardUseCase;
-        private readonly IGetPassRewardUseCase _getXpRewardUseCase;
+        private readonly IGetXpRewardUseCase _getXpRewardUseCase;
         private readonly ILogger _logger;
 
-        public GamificationGetRewards(ILoggerFactory loggerFactory, IGetPointsRewardUseCase getPointsRewardUseCase, IGetPassRewardUseCase getXpRewardUseCase)
+        public GamificationGetRewards(ILoggerFactory loggerFactory, IGetPointsRewardUseCase getPointsRewardUseCase, IGetXpRewardUseCase getXpRewardUseCase)
         {
             _logger = loggerFactory.CreateLogger<GamificationGetRewards>();
             _getPointsRewardUseCase = getPointsRewardUseCase;
@@ -32,12 +39,16 @@ namespace Gamification.Functions
 
             // use calculator
 
-            var response = req.CreateResponse(HttpStatusCode.OK);
-            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
 
-            response.WriteString(xpResult.Result.Data.Name);
+            // response
+            var pointsResultData = pointsResult.Result.Data;
+            var xpResultData = xpResult.Result.Data;
 
-            return response;
+            var pointsResponseData = new GamificationGetRewardsFunctionResponse(true,
+                new GamificationGetRewardsFunctionResponseData(userId, pointsResultData.Name, pointsResultData.Points,
+                    xpResultData.Xp));
+
+            return req.CreateJsonResponse(HttpStatusCode.OK, pointsResponseData.ToJson());
         }
     }
 }

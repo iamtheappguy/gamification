@@ -1,4 +1,4 @@
-﻿namespace Gamification.Interfaces.UseCases;
+﻿namespace Gamification.UseCases.Contracts;
 
 public interface ICommand<in TRequest, TResponse>
 {

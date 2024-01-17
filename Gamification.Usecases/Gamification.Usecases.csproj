@@ -11,6 +11,7 @@
     <ProjectReference Include="..\Gamification.Interfaces\Gamification.Interfaces.csproj" />
     <ProjectReference Include="..\Gamification.Repositories.Contracts\Gamification.Repositories.Contracts.csproj" />
     <ProjectReference Include="..\Gamification.Rewards\Gamification.Rewards.csproj" />
+    <ProjectReference Include="..\Gamification.Usecases.Contracts\Gamification.UseCases.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

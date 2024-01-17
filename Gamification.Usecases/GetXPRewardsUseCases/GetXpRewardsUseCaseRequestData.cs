@@ -1,4 +1,4 @@
-﻿using Gamification.Interfaces;
+﻿using Gamification.UseCases.Contracts;
 
 namespace Gamification.Usecases.GetXPRewardsUseCases;
 

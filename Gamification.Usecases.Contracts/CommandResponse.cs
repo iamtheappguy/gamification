@@ -1,6 +1,4 @@
-﻿using Gamification.Interfaces.UseCases;
-
-namespace Gamification.Core;
+﻿namespace Gamification.UseCases.Contracts;
 
 public class CommandResponse<T> : ICommandResponseData<T>
 {

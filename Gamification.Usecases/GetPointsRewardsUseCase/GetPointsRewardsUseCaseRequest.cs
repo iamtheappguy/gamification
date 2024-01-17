@@ -1,4 +1,4 @@
-﻿using Gamification.Interfaces;
+﻿using Gamification.UseCases.Contracts;
 
 namespace Gamification.Usecases.GetPointsRewardsUseCase;
 
@@ -9,7 +9,5 @@ public class GetPointsRewardsUseCaseRequest : ICommandRequest
     public GetPointsRewardsUseCaseRequest(string userId)
     {
         UserId = userId;
-        UserId = userId;
     }
-
 }

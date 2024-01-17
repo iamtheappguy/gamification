@@ -1,11 +1,14 @@
 ﻿using Gamification.Repositories;
+using Gamification.Repositories.Contracts.DropRepository;
 using Gamification.Repositories.Contracts.PassRepository;
 using Gamification.Repositories.Contracts.RewardsRepository;
 using Gamification.Repositories.Contracts.UserRepository;
 using Gamification.Repositories.Contracts.UserRewardsRepository;
 using Gamification.Rewards.Calculators;
+using Gamification.Usecases.GetDropUseCase;
+using Gamification.Usecases.GetPassUseCase;
 using Gamification.Usecases.GetPointsRewardsUseCase;
-using Gamification.Usecases.GetSeasonPassUseCase;
+using Gamification.Usecases.GetXPRewardsUseCases;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Gamification.Functions
@@ -20,10 +23,11 @@ namespace Gamification.Functions
             builder.AddSingleton((ICalculateRewardsXP)factory.Build(CalculateRewardsFactoryBuildItem.CalculateXP));
             builder.AddSingleton((ICalculateRewardsPoints)factory.Build(CalculateRewardsFactoryBuildItem.CalculatePoints));
 
-            
+
             // Transient so create each time a function called, could be singleton really but only hard coded right now
 
             // repositories
+            builder.AddTransient<IDropRepository, DropRepository>();
             builder.AddTransient<IPassRepository, PassRepository>();
             builder.AddTransient<IRewardsRepository, RewardsRepository>();
             builder.AddTransient<IUserRepository, UserRepository>();
@@ -31,7 +35,9 @@ namespace Gamification.Functions
 
             // user cases 
             builder.AddTransient<IGetPointsRewardUseCase, GetPointsRewardUseCase>();
+            builder.AddTransient<IGetXpRewardUseCase, GetXpRewardUseCase>();
             builder.AddTransient<IGetPassRewardUseCase, GetPassRewardUseCase>();
+            builder.AddTransient<IGetDropRewardUseCase, GetDropRewardUseCase>();
         }
     }
 }

@@ -8,12 +8,12 @@ namespace Gamification.Repositories
     {
         public GetPointsUserRewardsRepositoryGetResponse GetPointsById(string userId)
         {
-            throw new NotImplementedException();
+            return new GetPointsUserRewardsRepositoryGetResponse(true, string.Empty, new GetPointsUserRewardsRepositoryGetResponseData("121", "User 1", 6545));
         }
 
         public GetPointsUserXpRepositoryGetResponse GetXpById(string userId)
         {
-            throw new NotImplementedException();
+            return new GetPointsUserXpRepositoryGetResponse(true, string.Empty, new GetPointsUserXpRepositoryGetResponseData("121", "User 1", 754500.01));
         }
     }
 }

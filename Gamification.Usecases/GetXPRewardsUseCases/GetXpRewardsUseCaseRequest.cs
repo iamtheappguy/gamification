@@ -1,14 +1,14 @@
-﻿using Gamification.Interfaces;
+﻿using Gamification.UseCases.Contracts;
 
 namespace Gamification.Usecases.GetXPRewardsUseCases;
 
 public class GetXpRewardsUseCaseRequest : ICommandRequest
 {
-    private readonly GetXpRewardsUseCaseRequestData _getXpRewardsUseCaseData;
+    public GetXpRewardsUseCaseRequestData Data { get; private set; }
 
-    public GetXpRewardsUseCaseRequest(GetXpRewardsUseCaseRequestData getXpRewardsUseCaseData)
+    // different way to have a request payload
+    public GetXpRewardsUseCaseRequest(GetXpRewardsUseCaseRequestData getXpRewardsUseCaseRequestData)
     {
-        _getXpRewardsUseCaseData = getXpRewardsUseCaseData;
+        Data = getXpRewardsUseCaseRequestData;
     }
-
 }

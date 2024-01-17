@@ -1,4 +1,4 @@
-﻿using Gamification.Core;
+﻿using Gamification.UseCases.Contracts;
 
 namespace Gamification.Usecases.GetPointsRewardsUseCase;
 
